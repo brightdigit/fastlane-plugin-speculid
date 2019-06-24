@@ -5,8 +5,9 @@ module Fastlane
   module Actions
     class SpeculidAction < Action
       def self.run(params)
-        unless File.file?("/Applications/Speculid.app/Contents/SharedSupport/speculid") then
+        unless File.file?("/Applications/Speculid.app/Contents/SharedSupport/speculid")
           UI.error("Speculid is not installed. Please go to https://speculid.com to download and install.")
+          return
         end
 
         Dir.glob("**/*.speculid") do |path|
