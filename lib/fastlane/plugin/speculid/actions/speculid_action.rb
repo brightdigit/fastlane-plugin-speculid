@@ -5,7 +5,13 @@ module Fastlane
   module Actions
     class SpeculidAction < Action
       def self.run(params)
-        UI.message("The speculid plugin is working!")
+        unless File.file?("/Applications/Speculid.app/Contents/SharedSupport/speculid") then
+          UI.error("Speculid is not installed. Please go to https://speculid.com to download and install.")
+        end
+
+        Dir.glob("**/*.speculid") do |path|
+          system("/Applications/Speculid.app/Contents/SharedSupport/speculid", "--process", path)
+        end
       end
 
       def self.description
