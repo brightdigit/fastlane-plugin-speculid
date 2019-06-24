@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'leogdion@brightdigit.com'
 
   spec.summary       = 'Use speculid to easily manage graphics in Xcode projects'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-speculid"
+  spec.homepage      = "https://github.com/brightdigit/fastlane-plugin-speculid"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
